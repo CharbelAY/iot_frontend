@@ -25,3 +25,12 @@ Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protrac
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+
+## Actions 
+
+/Created angular project  using  ng new IoTPlatform 
+/Added angular material and angular cdk   using  ng add @angular/material
+/Used default nav provided by angular using ng generate @angular/material:material-nav --name=main-navigation-bar
+/icons are available on https://material.io/tools/icons/?icon=settings&style=twotone
+/used default data table using ng generate @angular/material:material-table --name=data-table
+
