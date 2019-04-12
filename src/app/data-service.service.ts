@@ -13,7 +13,7 @@ export interface TestData {
 
 export class DataServiceService {
 
-  dataUrl = '../assets/test.json';
+  dataUrl = 'http://127.0.0.1:5000/hello';
 
   constructor(private http: HttpClient) { }
 
