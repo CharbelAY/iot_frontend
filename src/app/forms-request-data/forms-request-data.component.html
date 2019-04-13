@@ -1,0 +1,14 @@
+<div class="example-container">
+  <mat-form-field>
+    <input matInput type="string" [(ngModel)]="startDate" placeholder="StartDate">
+  </mat-form-field>
+  <mat-form-field>
+    <input matInput type="string" [(ngModel)]="endDate" placeholder="EndDate" >
+  </mat-form-field>
+
+
+</div>
+
+<button mat-raised-button (click)="sendData()">Send</button>
+{{startDate}}
+{{endDate}}

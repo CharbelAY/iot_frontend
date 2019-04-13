@@ -14,6 +14,9 @@
       <a mat-list-item href="barchart">
           <i class="material-icons">create</i>
       </a>
+      <a mat-list-item href="forms">
+        <i class="material-icons">assignment</i>
+    </a>
     </mat-nav-list>
   </mat-sidenav>
   <mat-sidenav-content>
@@ -28,6 +31,7 @@
       </button>
       <span>IoTPlatform</span>
     </mat-toolbar>
-    <app-dashboard></app-dashboard>
+    <!-- <app-dashboard></app-dashboard> -->
+    <router-outlet></router-outlet>  
   </mat-sidenav-content>
 </mat-sidenav-container>

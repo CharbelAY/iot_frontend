@@ -2,7 +2,9 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
 
-
+import { FormsModule } from '@angular/forms';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import {MatInputModule} from '@angular/material/input';
 import {ChartsModule} from 'ng2-charts';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -13,6 +15,8 @@ import { MatToolbarModule, MatButtonModule, MatSidenavModule, MatIconModule, Mat
 import { DataTableComponent } from './data-table/data-table.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import {BarchartComponent} from './barchart/barchart.component';
+import { DataServiceService } from './data-service.service';
+import { FormsRequestDataComponent } from './forms-request-data/forms-request-data.component';
 
 
 
@@ -22,9 +26,13 @@ import {BarchartComponent} from './barchart/barchart.component';
     MainNavigationBarComponent,
     DataTableComponent,
     DashboardComponent,
-    BarchartComponent
+    BarchartComponent,
+    FormsRequestDataComponent,
   ],
   imports: [
+    FormsModule,
+    MatFormFieldModule,
+    MatInputModule,
     BrowserModule,
     HttpClientModule,
     AppRoutingModule,
@@ -43,7 +51,7 @@ import {BarchartComponent} from './barchart/barchart.component';
     MatMenuModule,
     ChartsModule,
   ],
-  providers: [],
+  providers: [DataServiceService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
