@@ -17,6 +17,7 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import {BarchartComponent} from './barchart/barchart.component';
 import { DataServiceService } from './data-service.service';
 import { FormsRequestDataComponent } from './forms-request-data/forms-request-data.component';
+import { TestDbdataComponent } from './test-dbdata/test-dbdata.component';
 
 
 
@@ -28,6 +29,7 @@ import { FormsRequestDataComponent } from './forms-request-data/forms-request-da
     DashboardComponent,
     BarchartComponent,
     FormsRequestDataComponent,
+    TestDbdataComponent,
   ],
   imports: [
     FormsModule,
