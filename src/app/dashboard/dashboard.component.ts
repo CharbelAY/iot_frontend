@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { map } from 'rxjs/operators';
 import { Breakpoints, BreakpointObserver } from '@angular/cdk/layout';
+import { DataTableComponent } from '../data-table/data-table.component';
 
 @Component({
   selector: 'app-dashboard',
@@ -13,7 +14,7 @@ export class DashboardComponent {
     map(({ matches }) => {
       if (matches) {
         return [
-          { title: 'Packet Loss', cols: 1, rows: 1 },
+          { title: 'Packet', cols: 1, rows: 1,num:1 },
           { title: 'Other Stuff', cols: 1, rows: 1 },
           { title: 'Something Else', cols: 1, rows: 1 },
           { title: 'More', cols: 1, rows: 1 }
@@ -21,8 +22,8 @@ export class DashboardComponent {
       }
 
       return [
-        { title: 'Packet Loss', cols: 2, rows: 1 },
-        { title: 'Other Stuff', cols: 1, rows: 1 },
+        { title: 'Packet', cols: 2, rows: 2,num:1 },
+        { title: 'Other Stuff', cols: 2, rows: 1 },
         { title: 'Something Else', cols: 1, rows: 2 },
         { title: 'More', cols: 1, rows: 1 }
       ];
