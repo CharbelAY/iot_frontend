@@ -2,8 +2,8 @@
   <mat-sidenav #drawer class="sidenav" fixedInViewport="true"
       [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
       [mode]="(isHandset$ | async) ? 'over' : 'side'"
-      [opened]="!(isHandset$ | async)">
-    <mat-toolbar>Menu</mat-toolbar>
+      [opened]="!(isHandset$ | async)" style="background-color: grey">
+    <mat-toolbar >Menu</mat-toolbar>
     <mat-nav-list>
       <a mat-list-item href="test-data">
         <i class="material-icons">schedule</i>
@@ -20,7 +20,7 @@
     </mat-nav-list>
   </mat-sidenav>
   <mat-sidenav-content>
-    <mat-toolbar color="primary">
+    <mat-toolbar style="background-color: grey">
       <button
         type="button"
         aria-label="Toggle sidenav"

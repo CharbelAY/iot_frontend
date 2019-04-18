@@ -13,6 +13,7 @@ import { MainNavigationBarComponent } from './main-navigation-bar/main-navigatio
 import { LayoutModule } from '@angular/cdk/layout';
 import { MatToolbarModule, MatButtonModule, MatSidenavModule, MatIconModule, MatListModule, MatTableModule, MatPaginatorModule, MatSortModule, MatGridListModule, MatCardModule, MatMenuModule } from '@angular/material';
 import { DataTableComponent } from './data-table/data-table.component';
+import { RadarChartComponent } from './radar-chart/radar-chart.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import {BarchartComponent} from './barchart/barchart.component';
 import { DataServiceService } from './data-service.service';
@@ -30,6 +31,7 @@ import { TestDbdataComponent } from './test-dbdata/test-dbdata.component';
     BarchartComponent,
     FormsRequestDataComponent,
     TestDbdataComponent,
+    RadarChartComponent
   ],
   imports: [
     FormsModule,
