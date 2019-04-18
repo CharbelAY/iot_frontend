@@ -2,8 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { DataServiceService } from '../data-service.service';
 
 export interface TestData {
-  Name: string;
-  City: string;
+  Message: String;
 }
 
 @Component({
@@ -24,8 +23,7 @@ export class TestDbdataComponent implements OnInit {
   showConfig() {
     this.service.getData()
       .subscribe((data: TestData) => this.td = {
-          Name: data['Name'],
-          City:  data['City']
+          Message: data['Message'],
       });
 }
 }

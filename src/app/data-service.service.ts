@@ -6,8 +6,8 @@ import { Observable } from 'rxjs';
 
 
 export interface TestData {
-  Name: string;
-  City: string;
+  Message: string;
+  
 }
 
 export interface requestData{
@@ -28,7 +28,7 @@ const httpOptions = {
 
 export class DataServiceService {
 
-  dataUrl = 'http://127.0.0.1:5000/hello';
+  dataUrl = 'http://127.0.0.1:5000/send';
   requestUrl = 'http://127.0.0.1:5000/receive'
 
   

@@ -3,8 +3,7 @@ import { DataServiceService } from './data-service.service';
 
 
 export interface TestData {
-  Name: string;
-  City: string;
+  Message: string;
 }
 
 @Component({
@@ -24,8 +23,7 @@ td : TestData
   showConfig() {
     this.service.getData()
       .subscribe((data: TestData) => this.td = {
-          Name: data['Name'],
-          City:  data['City']
+          Message: data['Message'],
       });
   }
 
