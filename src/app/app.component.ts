@@ -20,24 +20,6 @@ export class AppComponent {
   title = 'IoTPlatform';
 
   td : TestData;
-  bl = false;
-  bll =true;
-
-  username: string;
-  password: string;
-
-
-
-  login() : void {
-    if(this.username == 'admin' && this.password == 'admin'){
-    console.log("Tree");
-    this.bl=true;
-    this.bll=false;
-    this.router.navigate(["main-navigation"]);
-    }else {
-      alert("Invalid credentials");
-    }
-  }
 
   showConfig() {
     this.service.getData()

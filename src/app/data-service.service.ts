@@ -17,7 +17,7 @@ export interface requestData{
 
 const httpOptions = {
   headers: new HttpHeaders({
-    'Content-Type':  'application/json'
+    'Content-Type':  'application/json',
   })
 };
 
@@ -30,6 +30,7 @@ export class DataServiceService {
 
   dataUrl = 'http://127.0.0.1:5000/send';
   requestUrl = 'http://127.0.0.1:5000/receive'
+  loginUrl = 'http://127.0.0.1:5000/login'
 
   
 
@@ -45,6 +46,17 @@ export class DataServiceService {
     var s =  this.http.post<any>(this.requestUrl, d,httpOptions).subscribe(r=>{});
     console.log(s)
     return 
+  }
+
+
+  login (lf: loginform): Observable<any> {
+    var d = JSON.stringify(lf)
+    var res:String;
+    this.http.post<any>(this.loginUrl, d,httpOptions).subscribe((r:String)=>{
+    console.log(r);
+    res=r;
+    });
+      return 
   }
 
 

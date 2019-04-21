@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {Router} from '@angular/router';
-import {MatDialog} from '@angular/material'
+import { DataServiceService } from '../data-service.service';
 
   export class FormFieldPrefixSuffixExample {
     hide = true;
@@ -13,7 +13,7 @@ import {MatDialog} from '@angular/material'
 })
 export class LoginFormComponent implements OnInit {
 
-  constructor(private router: Router) { }
+  constructor(private router: Router,private service:DataServiceService) { }
 
 
 username: string;
@@ -24,11 +24,12 @@ password: string;
 
 
   login() : void {
-    if(this.username == 'admin' && this.password == 'admin'){
+      var lf:loginform = { 
+        username:this.username,
+        password:this.password
+     } 
+     this.service.login(lf);
      this.router.navigateByUrl('main-navigation');
-    }else {
-      alert("Invalid credentials");
     }
-  }
 
 }
