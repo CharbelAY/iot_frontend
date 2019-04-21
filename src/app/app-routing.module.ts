@@ -9,8 +9,6 @@ import { RadarChartComponent } from './radar-chart/radar-chart.component';
 import { LoginFormComponent } from './login-form/login-form.component';
 import { MainNavigationBarComponent } from './main-navigation-bar/main-navigation-bar.component';
 import { CreateMeasureComponent } from './create-measure/create-measure.component';
-import { LoggedInGuard } from './logged-in-guard';
-
 
 const routes: Routes = [
   {path: 'create-measure', component:CreateMeasureComponent, canActivate:[LoginFormComponent]},
