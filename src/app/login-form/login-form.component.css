@@ -1,0 +1,50 @@
+.gradient{
+  position:fixed;
+  padding:0;
+  margin:0;
+
+  top:0;
+  left:0;
+
+  width: 100%;
+  height: 100%;
+  background-image: linear-gradient(90deg, #536976, #292E49);
+}
+.flex-container {
+    display: flex;
+    justify-content: center;
+  }
+
+  .card {
+    margin: 0 auto;
+    overflow: scroll;
+    margin-top: 50px;
+    height: 70%;
+    border-radius: 25px;
+    background-color: white;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    transition: 1s;
+    width: 50%;
+  }
+  
+  .grid {
+    display: grid;
+    grid-template-columns: auto;
+  }
+
+  .login-form {
+    margin: 0 auto ;
+    margin-top: 20px;
+    min-width: 150px;
+    max-width: 500px;
+    width: 100%;
+  }
+
+  .example-full-width {
+    width: 100%;
+  }
+
+  .title{
+    padding: 30px;
+    text-align: center;
+  }

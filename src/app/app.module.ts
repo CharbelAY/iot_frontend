@@ -2,6 +2,10 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
 
+import { ReactiveFormsModule} from '@angular/forms';
+
+import {MatAutocompleteModule} from '@angular/material/autocomplete';
+import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 import { FormsModule } from '@angular/forms';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatInputModule} from '@angular/material/input';
@@ -19,6 +23,8 @@ import {BarchartComponent} from './barchart/barchart.component';
 import { DataServiceService } from './data-service.service';
 import { FormsRequestDataComponent } from './forms-request-data/forms-request-data.component';
 import { TestDbdataComponent } from './test-dbdata/test-dbdata.component';
+import { LoginFormComponent } from './login-form/login-form.component';
+import { CreateMeasureComponent } from './create-measure/create-measure.component';
 
 
 
@@ -31,9 +37,14 @@ import { TestDbdataComponent } from './test-dbdata/test-dbdata.component';
     BarchartComponent,
     FormsRequestDataComponent,
     TestDbdataComponent,
-    RadarChartComponent
+    RadarChartComponent,
+    LoginFormComponent,
+    CreateMeasureComponent
   ],
   imports: [
+    ReactiveFormsModule,
+    MatAutocompleteModule,
+    MatProgressSpinnerModule,
     FormsModule,
     MatFormFieldModule,
     MatInputModule,

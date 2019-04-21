@@ -1,0 +1,19 @@
+<div class="gradient">
+    <div class="card">
+      <h1 class="title">USJ-ESIB IoT Platform</h1>
+      <div class="grid">
+          <form class="login-form">
+              <mat-form-field class="example-full-width">
+                <input matInput placeholder="Username" type="string"[(ngModel)]="username" [ngModelOptions]="{standalone: true}" >
+              </mat-form-field>
+              <br><br>
+                  <mat-form-field class="example-full-width">
+                      <input matInput placeholder="Enter your password" [type]="hide ? 'password' : 'string'" [(ngModel)]="password" [ngModelOptions]="{standalone: true}">
+                      <mat-icon matSuffix (click)="hide = !hide">{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+                    </mat-form-field>
+            </form>
+            <br><br>
+            <button mat-button (click)="login()">Login</button>
+      </div>
+    </div>
+</div>
