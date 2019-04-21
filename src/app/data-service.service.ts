@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { Subject } from 'rxjs';
 
 
 
@@ -32,7 +33,21 @@ export class DataServiceService {
   requestUrl = 'http://127.0.0.1:5000/receive'
   loginUrl = 'http://127.0.0.1:5000/login'
 
+  private subject = new Subject<any>();
+
   
+
+    sendMessage(message: String) {
+        this.subject.next({ text: message });
+    }
+
+    clearMessage() {
+        this.subject.next();
+    }
+
+    getMessage(): Observable<any> {
+        return this.subject.asObservable();
+    }
 
   constructor(private http: HttpClient) { }
 
@@ -51,10 +66,10 @@ export class DataServiceService {
 
   login (lf: loginform): Observable<any> {
     var d = JSON.stringify(lf)
-    var res:String;
     this.http.post<any>(this.loginUrl, d,httpOptions).subscribe((r:String)=>{
     console.log(r);
-    res=r;
+    console.log(typeof r);
+    this.sendMessage(r);
     });
       return 
   }
