@@ -66,7 +66,7 @@ import { CreateMeasureComponent } from './create-measure/create-measure.componen
     MatMenuModule,
     ChartsModule,
   ],
-  providers: [DataServiceService],
+  providers: [DataServiceService,LoginFormComponent],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
