@@ -2,7 +2,8 @@
   <mat-sidenav #drawer class="sidenav" fixedInViewport="true"
       [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
       [mode]="(isHandset$ | async) ? 'over' : 'side'"
-      [opened]="!(isHandset$ | async)" style="background-color: grey">
+      [opened]="!(isHandset$ | async)" style="  background-image: linear-gradient(90deg, #536976, #292E49);
+      ">
     <mat-toolbar >Menu</mat-toolbar>
     <mat-nav-list>
       <a mat-list-item (click)="create=true; dash=false; table=false; " >
@@ -24,7 +25,7 @@
     </mat-nav-list>
   </mat-sidenav>
   <mat-sidenav-content>
-    <mat-toolbar style="background-color: grey">
+    <mat-toolbar class="topnav" >
       <button
         type="button"
         aria-label="Toggle sidenav"
@@ -38,6 +39,5 @@
     <app-create-measure *ngIf="create"></app-create-measure>
      <app-dashboard *ngIf="dash"></app-dashboard>
     <app-data-table *ngIf="table"></app-data-table>
-    {{bol}}
   </mat-sidenav-content>
 </mat-sidenav-container>
