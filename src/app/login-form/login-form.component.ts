@@ -3,11 +3,8 @@ import {Router} from '@angular/router';
 import { DataServiceService } from '../data-service.service';
 import { Subscription } from 'rxjs';
 import {CanActivate, ActivatedRouteSnapshot, RouterStateSnapshot} from '@angular/router';
+import { Observable } from 'rxjs';
 
-
-  export class FormFieldPrefixSuffixExample {
-    hide = true;
-  }
 
 @Component({
   selector: 'app-login-form',
@@ -23,17 +20,17 @@ export class LoginFormComponent implements CanActivate{
   constructor(private router: Router,private service:DataServiceService) { 
     this.subscription = this.service.getMessage().subscribe(message => { 
       if(message.text=="Success"){
-        this.message=message.text;
         this.isLoggedIn=true;
-        this.router.navigateByUrl('main-navigation');
-        console.log("eyyy");
+        router.navigateByUrl("radar");
       }
 
      });
   }
 
-  public canActivate(next:ActivatedRouteSnapshot,state:RouterStateSnapshot):boolean{
+  public canActivate():Observable<boolean>|Promise<boolean>|boolean{
     if(this.isLoggedIn){
+      console.log("okk");
+      this.router.navigate(["main-navigation"]);
       return true;
     }else{
       this.router.navigate([""]);
@@ -45,7 +42,6 @@ export class LoginFormComponent implements CanActivate{
 username: string;
 password: string;
 
-message: string;
 subscription: Subscription;
 
   ngOnInit() {

@@ -1,11 +1,14 @@
+
+<h1 class="submitbutton">CreateMeasurement</h1>
+
+<br><br><br>
+
 <div class="example-container">
     <mat-form-field>
-      
       <input matInput type="string" [(ngModel)]="startDate" placeholder="Measure Identifier">
     </mat-form-field>
 
     <mat-form-field>
-      
         <input matInput type="string" [(ngModel)]="startDate" placeholder="Start Date">
       </mat-form-field>
 
@@ -15,28 +18,100 @@
   
   
   </div>
+  
 
   <div class="example-container">
 
-      <mat-form-field class="example-full-width">
-          <input type="text" placeholder="Pick one" aria-label="Number" matInput [formControl]="myControl" [matAutocomplete]="auto">
-          <mat-autocomplete #auto="matAutocomplete">
-            <mat-option *ngFor="let option of options" [value]="option">
-              {{option}}
-            </mat-option>
-          </mat-autocomplete>
+      <mat-form-field>
+        
+          <input matInput type="string" [(ngModel)]="creator" placeholder="Created by">
         </mat-form-field>
   
       <mat-form-field>
         
-          <input matInput type="string" [(ngModel)]="startDate" placeholder="Measure Identifier">
+          <input matInput type="string" [(ngModel)]="startDate" placeholder="Type of Measure">
         </mat-form-field>
-        
-      <mat-form-field>
-        <input matInput type="string" [(ngModel)]="endDate" placeholder="EndDate" >
-      </mat-form-field>
-    
-    
+
     </div>
-  
-  <button class="submitbutton" mat-raised-button (click)="sendData()">Send</button>
+
+    <br>
+
+    <button class="centerbutton" mat-raised-button (click)="sendData()">Send</button>
+    <br><br><br>
+    <div class ="example-container-card">
+        <mat-card class="example-card">
+            <mat-card-header>
+              <mat-card-title>Shiba Inu</mat-card-title>
+              <mat-card-subtitle>Dog Breed</mat-card-subtitle>
+            </mat-card-header>
+            <mat-card-content>
+              <p>
+                The Shiba Inu is the smallest of the six original and distinct spitz breeds of dog from Japan.
+                A small, agile dog that copes very well with mountainous terrain, the Shiba Inu was originally
+                bred for hunting.
+              </p>
+            </mat-card-content>
+            <mat-card-actions>
+              <button mat-button>LIKE</button>
+              <button mat-button>SHARE</button>
+            </mat-card-actions>
+          </mat-card>
+
+          <mat-card class="example-card">
+              <mat-card-header>
+                <mat-card-title>Shiba Inu</mat-card-title>
+                <mat-card-subtitle>Dog Breed</mat-card-subtitle>
+              </mat-card-header>
+              <mat-card-content>
+                <p>
+                  The Shiba Inu is the smallest of the six original and distinct spitz breeds of dog from Japan.
+                  A small, agile dog that copes very well with mountainous terrain, the Shiba Inu was originally
+                  bred for hunting.
+                </p>
+              </mat-card-content>
+              <mat-card-actions>
+                <button mat-button>LIKE</button>
+                <button mat-button>SHARE</button>
+              </mat-card-actions>
+            </mat-card>
+
+
+            <mat-card class="example-card">
+                <mat-card-header>
+                  <mat-card-title>Shiba Inu</mat-card-title>
+                  <mat-card-subtitle>Dog Breed</mat-card-subtitle>
+                </mat-card-header>
+                <mat-card-content>
+                  <p>
+                    The Shiba Inu is the smallest of the six original and distinct spitz breeds of dog from Japan.
+                    A small, agile dog that copes very well with mountainous terrain, the Shiba Inu was originally
+                    bred for hunting.
+                  </p>
+                </mat-card-content>
+                <mat-card-actions>
+                  <button mat-button>LIKE</button>
+                  <button mat-button>SHARE</button>
+                </mat-card-actions>
+              </mat-card>
+
+
+              <mat-card class="example-card">
+                  <mat-card-header>
+                    <mat-card-title>Shiba Inu</mat-card-title>
+                    <mat-card-subtitle>Dog Breed</mat-card-subtitle>
+                  </mat-card-header>
+                  <mat-card-content>
+                    <div>
+                      <ul>
+                        <li>a</li>
+                        <li>b</li>
+                      </ul>
+                    </div>
+                  </mat-card-content>
+                  <mat-card-actions>
+                    <button mat-button>LIKE</button>
+                    <button mat-button>SHARE</button>
+                  </mat-card-actions>
+                </mat-card>
+    </div>
+

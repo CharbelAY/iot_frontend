@@ -11,15 +11,9 @@ import { MainNavigationBarComponent } from './main-navigation-bar/main-navigatio
 import { CreateMeasureComponent } from './create-measure/create-measure.component';
 
 const routes: Routes = [
-  {path: 'create-measure', component:CreateMeasureComponent, canActivate:[LoginFormComponent]},
-  {path: 'main-navigation', component:MainNavigationBarComponent,canActivate:[LoginFormComponent] },
-  {path: 'barchart', component:BarchartComponent, canActivate:[LoginFormComponent]},
-  {path: 'dashboard', component:DashboardComponent, canActivate:[LoginFormComponent]},
-  {path:'forms', component:RadarChartComponent, canActivate:[LoginFormComponent]},
-  {path:'test-data', component:TestDbdataComponent, canActivate:[LoginFormComponent]},
-  {path:'radar-chart', component:RadarChartComponent, canActivate:[LoginFormComponent]},
+  {path: 'main-navigation', component:MainNavigationBarComponent},
+  {path:'radar',component:RadarChartComponent},
   {path:'', component:LoginFormComponent}
-
 ];
 
 @NgModule({
