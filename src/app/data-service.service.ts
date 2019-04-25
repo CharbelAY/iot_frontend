@@ -32,13 +32,24 @@ export class DataServiceService {
   dataUrl = 'http://127.0.0.1:5000/send';
   requestUrl = 'http://127.0.0.1:5000/receive'
   loginUrl = 'http://127.0.0.1:5000/login'
+  createMeasureUrl='http://127.0.0.1:5000/createMeasure'
 
   private subject = new Subject<any>();
+  private subjectData = new Subject<any>();
+  private subjectRadar = new Subject<any>();
 
   
 
     sendMessage(message: String) {
         this.subject.next({ text: message });
+    }
+
+    sendMessageData(obj:JSON){
+      this.subjectData.next(obj);
+    }
+
+    sendMessagePacketLoss(obj:JSON){
+      this.subjectRadar.next(obj);
     }
 
     clearMessage() {
@@ -48,6 +59,14 @@ export class DataServiceService {
     getMessage(): Observable<any> {
         return this.subject.asObservable();
     }
+
+    getMessageData(): Observable<any> {
+      return this.subjectData.asObservable();
+  }
+
+  getMessageRadar(): Observable<any> {
+    return this.subjectRadar.asObservable();
+}
 
   constructor(private http: HttpClient) { }
 
@@ -73,6 +92,18 @@ export class DataServiceService {
     });
       return 
   }
+
+  cereateMeasure(lf:createmeasure): Observable<any>{
+    var d = JSON.stringify(lf)
+    this.http.post<any>(this.createMeasureUrl, d,httpOptions).subscribe((r:string)=>{
+      let obj = JSON.parse(r);
+      this.sendMessageData(obj.data);
+      this.sendMessagePacketLoss(obj.packetloss);
+  });
+  return
+}
+
+
 
 
   

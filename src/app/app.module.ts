@@ -1,9 +1,11 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
+import {NgxMaterialTimepickerModule} from 'ngx-material-timepicker';
 
 import { ReactiveFormsModule} from '@angular/forms';
 
+import {MatProgressBarModule} from '@angular/material/progress-bar';
 import {MatAutocompleteModule} from '@angular/material/autocomplete';
 import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 import { FormsModule } from '@angular/forms';
@@ -42,6 +44,8 @@ import { CreateMeasureComponent } from './create-measure/create-measure.componen
     CreateMeasureComponent
   ],
   imports: [
+    MatProgressBarModule,
+    NgxMaterialTimepickerModule,
     ReactiveFormsModule,
     MatAutocompleteModule,
     MatProgressSpinnerModule,

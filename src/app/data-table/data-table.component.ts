@@ -1,6 +1,8 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { MatPaginator, MatSort } from '@angular/material';
 import { DataTableDataSource } from './data-table-datasource';
+import { DataServiceService } from '../data-service.service';
+
 
 @Component({
   selector: 'app-data-table',
@@ -8,6 +10,9 @@ import { DataTableDataSource } from './data-table-datasource';
   styleUrls: ['./data-table.component.css']
 })
 export class DataTableComponent implements OnInit {
+  constructor(private service:DataServiceService) {
+
+  }
   @ViewChild(MatPaginator) paginator: MatPaginator;
   @ViewChild(MatSort) sort: MatSort;
   dataSource: DataTableDataSource;
@@ -16,6 +21,6 @@ export class DataTableComponent implements OnInit {
   displayedColumns = ['id', 'name'];
 
   ngOnInit() {
-    this.dataSource = new DataTableDataSource(this.paginator, this.sort);
+    this.dataSource = new DataTableDataSource(this.paginator, this.sort,this.service);
   }
 }

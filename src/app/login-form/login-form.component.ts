@@ -21,7 +21,7 @@ export class LoginFormComponent implements CanActivate{
     this.subscription = this.service.getMessage().subscribe(message => { 
       if(message.text=="Success"){
         this.isLoggedIn=true;
-        router.navigateByUrl("radar");
+        router.navigateByUrl("main-navigation");
       }
 
      });
@@ -59,5 +59,7 @@ subscription: Subscription;
      } 
      this.service.login(lf);
     }
+
+  
 
 }

@@ -1,6 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { ChartDataSets, ChartType, ChartOptions } from 'chart.js';
 import { Label } from 'ng2-charts';
+import { DataServiceService } from '../data-service.service';
+import { Subscription } from 'rxjs';
+
+
 
 @Component({
   selector: 'app-radar-chart',
@@ -20,7 +24,15 @@ export class RadarChartComponent implements OnInit {
   ];
   public radarChartType: ChartType = 'radar';
 
-  constructor() { }
+  constructor(private service:DataServiceService) { 
+    this.subscription = this.service.getMessage().subscribe(message => { 
+      this.donnee=message;
+      console.log(this.donnee);
+     });
+  }
+
+  subscription: Subscription;
+  donnee:Object;
 
   ngOnInit() {
   }

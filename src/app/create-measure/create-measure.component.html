@@ -1,19 +1,30 @@
 
 <h1 class="submitbutton">Create Measurement</h1>
+<br>
+
+<section class="example-section">
+  <mat-progress-bar
+      class="example-margin"
+      [color]="color"
+      [mode]="mode"
+      [value]="value"
+      [bufferValue]="bufferValue">
+  </mat-progress-bar>
+</section>
 
 <br><br><br>
 
 <div class="example-container">
     <mat-form-field>
-      <input matInput type="string" [(ngModel)]="startDate" placeholder="Measure Identifier">
+      <input matInput type="string" [(ngModel)]="MeasureName" placeholder="Measure Identifier">
     </mat-form-field>
 
     <mat-form-field>
-        <input matInput type="string" [(ngModel)]="startDate" placeholder="Start Date">
+        <input matInput type="string" [(ngModel)]="startDate" placeholder="Start Date ex:2019-04-18T10:57">
       </mat-form-field>
 
     <mat-form-field>
-      <input matInput type="string" [(ngModel)]="endDate" placeholder="End Date" >
+      <input matInput type="string" [(ngModel)]="endDate" placeholder="End Date ex:2019-04-18T10:59:00" >
     </mat-form-field>
   
   
@@ -29,14 +40,14 @@
   
       <mat-form-field>
         
-          <input matInput type="string" [(ngModel)]="startDate" placeholder="Type of Measure">
+          <input matInput type="string" [(ngModel)]="TypeOfMeasure" placeholder="Type of Measure">
         </mat-form-field>
 
     </div>
 
     <br>
 
-    <button class="centerbutton" mat-raised-button (click)="sendData()">Send</button>
+    <button class="centerbutton" mat-raised-button (click)="cereateMeasure()">Send</button>
     <br><br><br>
     <div class ="example-container-card">
         <mat-card class="example-card">

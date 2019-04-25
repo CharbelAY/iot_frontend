@@ -2,6 +2,10 @@ import { DataSource } from '@angular/cdk/collections';
 import { MatPaginator, MatSort } from '@angular/material';
 import { map } from 'rxjs/operators';
 import { Observable, of as observableOf, merge } from 'rxjs';
+import { DataServiceService } from '../data-service.service';
+import { Subscription } from 'rxjs';
+
+
 
 // TODO: Replace this with your own data model type
 export interface DataTableItem {
@@ -40,9 +44,15 @@ const EXAMPLE_DATA: DataTableItem[] = [
  */
 export class DataTableDataSource extends DataSource<DataTableItem> {
   data: DataTableItem[] = EXAMPLE_DATA;
+  subscription: Subscription;
+  donnee:Object;
 
-  constructor(private paginator: MatPaginator, private sort: MatSort) {
+
+  constructor(private paginator: MatPaginator, private sort: MatSort,private service:DataServiceService) {
     super();
+    this.subscription = this.service.getMessageData().subscribe(message => { 
+      this.donnee=message;
+     });
     
   }
 
