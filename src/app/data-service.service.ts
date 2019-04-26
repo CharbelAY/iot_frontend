@@ -48,7 +48,7 @@ export class DataServiceService {
       this.subjectData.next(obj);
     }
 
-    sendMessagePacketLoss(obj:JSON){
+    sendMessageRadar(obj:JSON){
       this.subjectRadar.next(obj);
     }
 
@@ -98,12 +98,39 @@ export class DataServiceService {
     this.http.post<any>(this.createMeasureUrl, d,httpOptions).subscribe((r:string)=>{
       let obj = JSON.parse(r);
       this.sendMessageData(obj.data);
-      this.sendMessagePacketLoss(obj.packetloss);
+      this.PacketLoss = obj.packetloss;
+      this.Radar = obj.stat;
+      window.localStorage.setItem(obj.stat.saveName, JSON.stringify(this.Radar));
+      window.localStorage.setItem(obj.packetloss.saveName, JSON.stringify(this.PacketLoss));
   });
   return
 }
 
+PacketLoss:Object;
+Radar:Object;
 
+getRadar(name){
+  if(name=="1/stat"){
+    console.log(JSON.parse(window.localStorage.getItem("1/stat")));
+    return JSON.parse(window.localStorage.getItem("1/stat"));
+  }
+  if(name=="2/stat"){
+    return JSON.parse(window.localStorage.getItem("2/stat"));
+  }
+  if(name=="3/stat"){
+    return JSON.parse(window.localStorage.getItem("3/stat"));
+  }
+}
+
+getPacketLoss(name){
+  if(name=="1"){
+    console.log(JSON.parse(window.localStorage.getItem("1")));
+    return JSON.parse(window.localStorage.getItem("1"));
+  }else{
+    console.log(JSON.parse(window.localStorage.getItem("saved")));
+    return JSON.parse(window.localStorage.getItem("saved"));
+  }
+}
 
 
   

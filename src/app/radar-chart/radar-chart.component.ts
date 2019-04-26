@@ -16,25 +16,46 @@ export class RadarChartComponent implements OnInit {
   public radarChartOptions: ChartOptions = {
     responsive: true,
   };
-  public radarChartLabels: Label[] = ['1', '5', '3', '2','6','8','4','7'];
+
+  list1: number[] = [];
+  list2: number[] = [];
+
+  public radarChartLabels: Label[] = ['0','1', '2', '3', '4','5','6','7','8'];
 
   public radarChartData: ChartDataSets[] = [
-    { data: [45, 10, 15, 10,5,5,2,8], label: 'Series A' },
-    { data: [28, 25, 17, 11,2,5,2,10], label: 'Series B' }
+    { data: this.list1, label: 'Series A' },
+    { data: this.list2, label: 'Series B' }
   ];
   public radarChartType: ChartType = 'radar';
-
-  constructor(private service:DataServiceService) { 
-    this.subscription = this.service.getMessage().subscribe(message => { 
-      this.donnee=message;
-      console.log(this.donnee);
-     });
-  }
-
   subscription: Subscription;
   donnee:Object;
 
+  constructor(private service:DataServiceService) { 
+    this.Radar1 = service.getRadar("1/stat");
+    this.Radar1=this.Radar1['dict'];
+    this.Radar2 = service.getRadar("2/stat");
+    console.log(this.Radar1);
+
+for (let key in this.Radar1) {
+  this.list1.push(this.Radar1[key]);
+}
+console.log("list 1 ");
+console.log(this.list1);
+
+// for (let key in this.Radar2) {
+//   this.list2.push(this.Radar2[key]);
+// }
+    
+  }
+
+  Radar1:Object;
+  Radar2:Object;
   ngOnInit() {
   }
+
+  ngOnDestroy() {
+    // // unsubscribe to ensure no memory leaks
+    // this.subscription.unsubscribe();
+}
 
 }

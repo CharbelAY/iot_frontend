@@ -22,10 +22,9 @@ export class DashboardComponent {
       // }
 
       return [
-        { title: 'Packet', cols: 1, rows: 1,num:1 },
+        { title: 'Packet', cols: 2, rows: 2,num:1 },
         { title: 'Other Stuff', cols: 1, rows: 1 ,num:2},
-        { title: 'Something Else', cols: 1, rows: 2 },
-        { title: 'More', cols: 1, rows: 1 }
+        { title: 'Something Else', cols: 1, rows: 1,num:3},
       ];
     })
   );

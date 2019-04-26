@@ -27,6 +27,8 @@ import { FormsRequestDataComponent } from './forms-request-data/forms-request-da
 import { TestDbdataComponent } from './test-dbdata/test-dbdata.component';
 import { LoginFormComponent } from './login-form/login-form.component';
 import { CreateMeasureComponent } from './create-measure/create-measure.component';
+import { LineChartComponent } from './line-chart/line-chart.component';
+import { PieChartComponent } from './pie-chart/pie-chart.component';
 
 
 
@@ -41,7 +43,9 @@ import { CreateMeasureComponent } from './create-measure/create-measure.componen
     TestDbdataComponent,
     RadarChartComponent,
     LoginFormComponent,
-    CreateMeasureComponent
+    CreateMeasureComponent,
+    LineChartComponent,
+    PieChartComponent
   ],
   imports: [
     MatProgressBarModule,
