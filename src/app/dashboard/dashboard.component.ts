@@ -25,6 +25,7 @@ export class DashboardComponent {
         { title: 'Packet', cols: 2, rows: 2,num:1 },
         { title: 'Other Stuff', cols: 1, rows: 1 ,num:2},
         { title: 'Something Else', cols: 1, rows: 1,num:3},
+        { title: 'Something Else', cols: 1, rows: 1,num:4}
       ];
     })
   );

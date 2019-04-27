@@ -20,8 +20,9 @@
         <mat-card-content class="dashboard-card-content">
           <div>
             <app-barchart *ngIf="card.num==1"></app-barchart>
-            <app-radar-chart *ngIf="card.num==2"></app-radar-chart>
-            <app-pie-chart *ngIf="card.num==3"></app-pie-chart>
+            <app-pie-chart *ngIf="card.num==2" [numberMeasure] = "1"></app-pie-chart>
+            <app-pie-chart *ngIf="card.num==3" [numberMeasure] = "2"></app-pie-chart>
+            <app-radar-chart *ngIf="card.num==4"></app-radar-chart>
           </div>
         </mat-card-content>
       </mat-card>

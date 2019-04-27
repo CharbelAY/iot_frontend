@@ -19,12 +19,14 @@ export class RadarChartComponent implements OnInit {
 
   list1: number[] = [];
   list2: number[] = [];
+  name1: string;
+  name2: string;
 
   public radarChartLabels: Label[] = ['0','1', '2', '3', '4','5','6','7','8'];
 
   public radarChartData: ChartDataSets[] = [
-    { data: this.list1, label: 'Series A' },
-    { data: this.list2, label: 'Series B' }
+    { data: this.list1, label: this.name1},
+    { data: this.list2, label: this.name2 }
   ];
   public radarChartType: ChartType = 'radar';
   subscription: Subscription;
@@ -32,8 +34,11 @@ export class RadarChartComponent implements OnInit {
 
   constructor(private service:DataServiceService) { 
     this.Radar1 = service.getRadar("1/stat");
+    this.name1=this.Radar1['saveName']
     this.Radar1=this.Radar1['dict'];
     this.Radar2 = service.getRadar("2/stat");
+    this.name2=this.Radar2['saveName']
+    this.Radar2 = this.Radar2['dict'];
     console.log(this.Radar1);
 
 for (let key in this.Radar1) {
@@ -42,9 +47,9 @@ for (let key in this.Radar1) {
 console.log("list 1 ");
 console.log(this.list1);
 
-// for (let key in this.Radar2) {
-//   this.list2.push(this.Radar2[key]);
-// }
+for (let key in this.Radar2) {
+  this.list2.push(this.Radar2[key]);
+}
     
   }
 

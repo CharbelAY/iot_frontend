@@ -97,9 +97,10 @@ export class DataServiceService {
     var d = JSON.stringify(lf)
     this.http.post<any>(this.createMeasureUrl, d,httpOptions).subscribe((r:string)=>{
       let obj = JSON.parse(r);
-      this.sendMessageData(obj.data);
+      // this.sendMessageData(obj.data);
       this.PacketLoss = obj.packetloss;
       this.Radar = obj.stat;
+      window.localStorage.setItem("Data",JSON.stringify(obj.data));
       window.localStorage.setItem(obj.stat.saveName, JSON.stringify(this.Radar));
       window.localStorage.setItem(obj.packetloss.saveName, JSON.stringify(this.PacketLoss));
   });
@@ -123,12 +124,12 @@ getRadar(name){
 }
 
 getPacketLoss(name){
-  if(name=="1"){
-    console.log(JSON.parse(window.localStorage.getItem("1")));
-    return JSON.parse(window.localStorage.getItem("1"));
+  if(name==="1"){
+    console.log(JSON.parse(window.localStorage.getItem("1/loss")));
+    return JSON.parse(window.localStorage.getItem("1/loss"));
   }else{
-    console.log(JSON.parse(window.localStorage.getItem("saved")));
-    return JSON.parse(window.localStorage.getItem("saved"));
+    console.log(JSON.parse(window.localStorage.getItem("2/loss")));
+    return JSON.parse(window.localStorage.getItem("2/loss"));
   }
 }
 

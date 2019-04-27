@@ -49,11 +49,7 @@ export class DataTableDataSource extends DataSource<DataTableItem> {
 
 
   constructor(private paginator: MatPaginator, private sort: MatSort,private service:DataServiceService) {
-    super();
-    this.subscription = this.service.getMessageData().subscribe(message => { 
-      this.donnee=message;
-     });
-    
+    super(); 
   }
 
   /**
