@@ -9,12 +9,21 @@ import { Color, BaseChartDirective, Label } from 'ng2-charts';
 })
 export class LineChartComponent implements OnInit {
   public lineChartData: ChartDataSets[] = [
-    { data: [0,0,1,2,2,0,1], label: 'Series A' },
-    { data: [0,1,3,2,2,1,2], label: 'Series B' },
+    { data: [1,1,1,0,1,0,1,0,1,1,1,1,0,0,1,1,1,0,0,1,1,0,0,0,1,1,1,1,1], label: 'Series A' },
+    // { data: [0,1,1,2,2,1,2], label: 'Series B' },
   ];
+
+  public lineChartLabels: Label[] = ['0', '1', '2', '3', '4', '5', '6','7','8','9','10','11','12','13','14','15','16','17','18','19','20','21','22','23','24','25','26','27','28','29'];
+
 
   public lineChartOptions: (ChartOptions & { annotation: any }) = {
     responsive: true,
+    elements:{
+      line:{
+        steppedLine:'before',
+        tension:0,
+      }
+    },
     scales: {
       // We use this empty structure as a placeholder for dynamic theming.
       xAxes: [{}],
@@ -69,20 +78,6 @@ export class LineChartComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
-  }
-
-  // events
-  public chartClicked({ event, active }: { event: MouseEvent, active: {}[] }): void {
-    console.log(event, active);
-  }
-
-  public chartHovered({ event, active }: { event: MouseEvent, active: {}[] }): void {
-    console.log(event, active);
-  }
-
-  public hideOne() {
-    const isHidden = this.chart.isDatasetHidden(1);
-    this.chart.hideDataset(1, !isHidden);
   }
 
 
