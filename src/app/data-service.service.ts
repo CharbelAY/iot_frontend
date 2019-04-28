@@ -3,6 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { Subject } from 'rxjs';
+import { JsonpCallbackContext } from '@angular/common/http/src/jsonp';
 
 
 
@@ -130,6 +131,14 @@ getPacketLoss(name){
   }else{
     console.log(JSON.parse(window.localStorage.getItem("2/loss")));
     return JSON.parse(window.localStorage.getItem("2/loss"));
+  }
+}
+
+getLineGraphData(name){
+  if(name=="Data"){
+    return JSON.parse(window.localStorage.getItem("Data"));
+  }else{
+    return JSON.parse(window.localStorage.getItem("2/DataLineChart"));
   }
 }
 

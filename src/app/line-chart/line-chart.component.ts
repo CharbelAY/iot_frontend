@@ -1,6 +1,7 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { ChartDataSets, ChartOptions } from 'chart.js';
 import { Color, BaseChartDirective, Label } from 'ng2-charts';
+import {DataServiceService} from '../data-service.service';
 
 @Component({
   selector: 'app-line-chart',
@@ -8,12 +9,18 @@ import { Color, BaseChartDirective, Label } from 'ng2-charts';
   styleUrls: ['./line-chart.component.css']
 })
 export class LineChartComponent implements OnInit {
+
+  packetlos1:Object;
+  list1x: number[] = [];
+  list1y: number[] = [];
+  list2x: number[] = [];
+
   public lineChartData: ChartDataSets[] = [
-    { data: [1,1,1,0,1,0,1,0,1,1,1,1,0,0,1,1,1,0,0,1,1,0,0,0,1,1,1,1,1], label: 'Series A' },
-    // { data: [0,1,1,2,2,1,2], label: 'Series B' },
+    { data: this.list1x , label: 'Series A' },
+    { data: this.list2x, label: 'Series B' },
   ];
 
-  public lineChartLabels: Label[] = ['0', '1', '2', '3', '4', '5', '6','7','8','9','10','11','12','13','14','15','16','17','18','19','20','21','22','23','24','25','26','27','28','29'];
+  public lineChartLabels: Label[] = [];
 
 
   public lineChartOptions: (ChartOptions & { annotation: any }) = {
@@ -75,9 +82,26 @@ export class LineChartComponent implements OnInit {
 
   @ViewChild(BaseChartDirective) chart: BaseChartDirective;
 
-  constructor() { }
+  constructor(private service:DataServiceService) { }
 
   ngOnInit() {
+    this.packetlos1 =this.service.getPacketLoss("1");
+    this.packetlos1 = this.packetlos1["loss"];
+    for (let key in this.packetlos1) {
+      this.list1x.push(parseInt(this.packetlos1[key]));
+    }
+
+    this.packetlos1 =this.service.getPacketLoss("2");
+    this.packetlos1 = this.packetlos1["loss"];
+    for (let key in this.packetlos1) {
+      this.list2x.push(parseInt(this.packetlos1[key]));
+    }
+
+    var i=1;
+    for (let key in this.list1x) {
+      this.lineChartLabels.push(i.toString());
+      i=i+1;
+    }
   }
 
 
