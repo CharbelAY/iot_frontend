@@ -11,8 +11,10 @@ import { MainNavigationBarComponent } from './main-navigation-bar/main-navigatio
 import { CreateMeasureComponent } from './create-measure/create-measure.component';
 import { LineChartComponent } from './line-chart/line-chart.component';
 import { PieChartComponent } from './pie-chart/pie-chart.component';
+import { HistoryCardsViewComponent } from './history-cards-view/history-cards-view.component';
 
 const routes: Routes = [
+  {path: 'History', component:HistoryCardsViewComponent},
   {path: 'main-navigation', component:MainNavigationBarComponent},
   {path:'radar',component:RadarChartComponent},
   {path:'linechart', component:LineChartComponent},

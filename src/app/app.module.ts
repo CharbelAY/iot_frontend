@@ -30,6 +30,7 @@ import { CreateMeasureComponent } from './create-measure/create-measure.componen
 import { LineChartComponent } from './line-chart/line-chart.component';
 import { PieChartComponent } from './pie-chart/pie-chart.component';
 import {MatSelectModule} from '@angular/material/select';
+import { HistoryCardsViewComponent } from './history-cards-view/history-cards-view.component';
 
 
 
@@ -47,7 +48,8 @@ import {MatSelectModule} from '@angular/material/select';
     LoginFormComponent,
     CreateMeasureComponent,
     LineChartComponent,
-    PieChartComponent
+    PieChartComponent,
+    HistoryCardsViewComponent
   ],
   imports: [
     MatSelectModule,

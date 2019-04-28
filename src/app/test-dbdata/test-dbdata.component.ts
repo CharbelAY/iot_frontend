@@ -25,7 +25,7 @@ export class TestDbdataComponent implements OnInit {
 
 
   constructor(private service:DataServiceService) {
-    this.subscription = this.service.getMessageCollections().subscribe(message => { 
+    this.subscription = this.service.getHistory().subscribe(message => { 
       this.Collection=message; 
       console.log(this.Collection);  
       for(let key in this.Collection){
@@ -41,4 +41,8 @@ export class TestDbdataComponent implements OnInit {
 
   td : TestData
 
+
+  save(){
+    this.service.saveMeasure();
+  }
 }

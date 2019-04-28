@@ -21,4 +21,5 @@ export class MainNavigationBarComponent {
   create:boolean=true;
   dash:boolean=false;
   tabe:boolean=false;
+  history:boolean=false;
 }
