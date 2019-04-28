@@ -10,20 +10,20 @@
               <mat-icon>more_vert</mat-icon>
             </button>
             <mat-menu #menu="matMenu" xPosition="before">
-              <a mat-menu-item href="barchart" *ngIf="card.num==1" >Expand</a>
-              <a mat-menu-item href="radar" *ngIf="card.num==2" >Expand</a>
-              <a mat-menu-item href="piechart" *ngIf="card.num==3" >Expand</a>
+              <!-- <a mat-menu-item href="barchart" *ngIf="card.num==1" >Expand</a> -->
+              <a mat-menu-item href="radar" *ngIf="card.num==4" >Expand</a>
+              <a mat-menu-item href="linechart" *ngIf="card.num==5" >Expand</a>
               <!-- <button mat-menu-item>Remove</button> -->
             </mat-menu>
           </mat-card-title>
         </mat-card-header>
         <mat-card-content class="dashboard-card-content">
           <div>
-            <app-barchart *ngIf="card.num==1"></app-barchart>
+            <!-- <app-barchart *ngIf="card.num==1"></app-barchart> -->
+            <app-line-chart *ngIf="card.num==5"></app-line-chart>
             <app-pie-chart *ngIf="card.num==2" [numberMeasure] = "1"></app-pie-chart>
             <app-pie-chart *ngIf="card.num==3" [numberMeasure] = "2"></app-pie-chart>
             <app-radar-chart *ngIf="card.num==4"></app-radar-chart>
-            <app-line-chart *ngIf="card.num==5"></app-line-chart>
           </div>
         </mat-card-content>
       </mat-card>

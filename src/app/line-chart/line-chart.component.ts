@@ -16,8 +16,8 @@ export class LineChartComponent implements OnInit {
   list2x: number[] = [];
 
   public lineChartData: ChartDataSets[] = [
-    { data: this.list1x , label: 'Series A' },
-    { data: this.list2x, label: 'Series B' },
+    { data: this.list1x , label: 'Series 1' },
+    { data: this.list2x, label: 'Series 2' },
   ];
 
   public lineChartLabels: Label[] = [];

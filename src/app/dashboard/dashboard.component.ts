@@ -22,11 +22,11 @@ export class DashboardComponent {
       // }
 
       return [
-        { title: 'Packet', cols: 2, rows: 2,num:1 },
-        { title: 'Other Stuff', cols: 1, rows: 1 ,num:2},
-        { title: 'Something Else', cols: 1, rows: 1,num:3},
-        { title: 'Something Else', cols: 1, rows: 1,num:4},
-        { title: 'Something Else', cols: 2, rows: 2,num:5}
+        // { title: 'Packet', cols: 2, rows: 2,num:1 },
+        { title: 'Packets Line Chart', cols: 2, rows: 2,num:5},
+        { title: 'Packet Loss Methode 1', cols: 1, rows: 1 ,num:2},
+        { title: 'Packet Loss Method 2', cols: 1, rows: 1,num:3},
+        { title: 'Number of Transmission before reception', cols: 1, rows: 1,num:4}
       ];
     })
   );

@@ -34,15 +34,21 @@ export class DataServiceService {
   requestUrl = 'http://127.0.0.1:5000/receive'
   loginUrl = 'http://127.0.0.1:5000/login'
   createMeasureUrl='http://127.0.0.1:5000/createMeasure'
+  CollectionsUrl='http://127.0.0.1:5000/collectionsUrl'
 
   private subject = new Subject<any>();
   private subjectData = new Subject<any>();
   private subjectRadar = new Subject<any>();
+  private subjectCollections = new Subject<any>();
 
   
 
     sendMessage(message: String) {
         this.subject.next({ text: message });
+    }
+
+    sendMessageCollections(message:Object){
+      this.subjectCollections.next(message)
     }
 
     sendMessageData(obj:JSON){
@@ -65,6 +71,10 @@ export class DataServiceService {
       return this.subjectData.asObservable();
   }
 
+  getMessageCollections(){
+    return this.subjectCollections.asObservable();
+  }
+
   getMessageRadar(): Observable<any> {
     return this.subjectRadar.asObservable();
 }
@@ -73,6 +83,12 @@ export class DataServiceService {
 
   getData() {
     return this.http.get<TestData>(this.dataUrl);
+  }
+
+  getCollections(){
+    this.http.get(this.CollectionsUrl).subscribe(data => {
+      this.sendMessageCollections(data);
+        });
   }
 
   sendRequestData (rd: requestData): Observable<any> {
@@ -87,8 +103,6 @@ export class DataServiceService {
   login (lf: loginform): Observable<any> {
     var d = JSON.stringify(lf)
     this.http.post<any>(this.loginUrl, d,httpOptions).subscribe((r:String)=>{
-    console.log(r);
-    console.log(typeof r);
     this.sendMessage(r);
     });
       return 

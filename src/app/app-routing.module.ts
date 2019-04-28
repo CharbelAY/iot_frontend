@@ -17,6 +17,7 @@ const routes: Routes = [
   {path:'radar',component:RadarChartComponent},
   {path:'linechart', component:LineChartComponent},
   {path:'piechart', component:PieChartComponent},
+  {path:'test',component:TestDbdataComponent},
   {path:'', component:LoginFormComponent}
 ];
 

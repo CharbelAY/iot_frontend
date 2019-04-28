@@ -29,6 +29,8 @@ import { LoginFormComponent } from './login-form/login-form.component';
 import { CreateMeasureComponent } from './create-measure/create-measure.component';
 import { LineChartComponent } from './line-chart/line-chart.component';
 import { PieChartComponent } from './pie-chart/pie-chart.component';
+import {MatSelectModule} from '@angular/material/select';
+
 
 
 
@@ -48,6 +50,7 @@ import { PieChartComponent } from './pie-chart/pie-chart.component';
     PieChartComponent
   ],
   imports: [
+    MatSelectModule,
     MatProgressBarModule,
     NgxMaterialTimepickerModule,
     ReactiveFormsModule,

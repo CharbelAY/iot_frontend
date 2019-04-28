@@ -1,2 +1,9 @@
-<h1>{{td.Message}}</h1>
- 
+<h4>Basic mat-select</h4>
+<mat-form-field>
+  <mat-label>Favorite food</mat-label>
+  <mat-select>
+    <mat-option *ngFor="let food of collectionsAffichage" [value]="food">
+      {{food}}
+    </mat-option>
+  </mat-select>
+</mat-form-field>
