@@ -23,13 +23,16 @@ export class HistoryCardsViewComponent implements OnInit {
       for(let key in this.History){
         this.HistoryAffichage.push(this.History[key]);
       }  
-      console.log(this.HistoryAffichage[0]) ;
      });
 
      this.service.getCollections();
    }
 
   ngOnInit() {
+  }
+
+  populate(i){
+    this.service.populate(i);
   }
 
 }

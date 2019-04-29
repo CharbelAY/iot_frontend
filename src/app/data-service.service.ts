@@ -194,6 +194,18 @@ saveMeasure(){
     });
 }
 
+populate(i){
+  console.log(i['PacketLoss1']);
+  console.log(i['PacketLoss2']);
+  console.log(i['Radar1']);
+  console.log(i['Radar2']);
+
+  window.localStorage.setItem(i['PacketLoss1']['saveName'], JSON.stringify(i['PacketLoss1']));
+  window.localStorage.setItem(i['PacketLoss2']['saveName'], JSON.stringify(i['PacketLoss2']));
+  window.localStorage.setItem(i['Radar1']['saveName'], JSON.stringify(i['Radar1']));
+  window.localStorage.setItem(i['Radar2']['saveName'], JSON.stringify(i['Radar2']));
+}
+
 
   
 

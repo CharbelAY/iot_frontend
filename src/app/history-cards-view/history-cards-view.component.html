@@ -1,6 +1,6 @@
 <div *ngFor="let i of HistoryAffichage">
   <br>
-<mat-card>
+<mat-card (click)="populate(i)">
   <h3>
     <p>Measure Identifier: {{i['id']}}</p>
     <p>Packet Loss Method 1: {{i['PacketLoss1']['pourcentage']}}</p>
