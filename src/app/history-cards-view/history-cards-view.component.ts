@@ -19,12 +19,11 @@ export class HistoryCardsViewComponent implements OnInit {
 
   constructor(private service:DataServiceService) {
     this.subscription = this.service.getHistory().subscribe(message => { 
-      this.History=message; 
-      var a = JSON.parse(JSON.stringify(message));
-      console.log(a['id']);
-      // for(let key in this.History){
-      //   this.HistoryAffichage.push(this.History[key]);
-      // }   
+      this.History=JSON.parse(message); 
+      for(let key in this.History){
+        this.HistoryAffichage.push(this.History[key]);
+      }  
+      console.log(this.HistoryAffichage[0]) ;
      });
 
      this.service.getCollections();

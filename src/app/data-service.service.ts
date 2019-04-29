@@ -120,7 +120,8 @@ export class DataServiceService {
   }
 
   getHistory(){
-    return this.http.get<JSON>(this.historyUrl);
+    var r=this.http.get<string>(this.historyUrl);
+    return r;
   }
 
   cereateMeasure(lf:createmeasure): Observable<any>{

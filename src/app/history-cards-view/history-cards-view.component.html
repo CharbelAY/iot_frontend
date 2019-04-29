@@ -1,9 +1,13 @@
-<div *ngFor="let i of list">
+<div *ngFor="let i of HistoryAffichage">
   <br>
 <mat-card>
-  <h1>Created by:</h1>
-  <h3>On:</h3>
-  <h4>Identifier</h4>
+  <h3>
+    <p>Measure Identifier: {{i['id']}}</p>
+    <p>Packet Loss Method 1: {{i['PacketLoss1']['pourcentage']}}</p>
+    <p>Packet Loss Method 2: {{i['PacketLoss2']['pourcentage']}}</p>
+  </h3>
 </mat-card>
 </div>
+
+
 
