@@ -15,7 +15,7 @@ import { HistoryCardsViewComponent } from './history-cards-view/history-cards-vi
 
 const routes: Routes = [
   {path: 'History', component:HistoryCardsViewComponent},
-  {path: 'main-navigation', component:MainNavigationBarComponent},
+  {path: 'main-navigation', component:MainNavigationBarComponent,canActivate: [LoginFormComponent]},
   {path:'radar',component:RadarChartComponent},
   {path:'linechart', component:LineChartComponent},
   {path:'piechart', component:PieChartComponent},

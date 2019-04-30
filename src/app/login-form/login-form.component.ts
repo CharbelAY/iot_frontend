@@ -20,20 +20,18 @@ export class LoginFormComponent implements CanActivate{
   constructor(private router: Router,private service:DataServiceService) { 
     this.subscription = this.service.getMessage().subscribe(message => { 
       if(message.text=="Success"){
-        this.isLoggedIn=true;
         router.navigateByUrl("main-navigation");
       }
 
      });
   }
 
-  public canActivate():Observable<boolean>|Promise<boolean>|boolean{
-    if(this.isLoggedIn){
-      console.log("okk");
-      this.router.navigate(["main-navigation"]);
+  public canActivate(){
+    console.log(this.service.isLoggedIn());
+    if(this.service.isLoggedIn()){
       return true;
     }else{
-      this.router.navigate([""]);
+      window.alert("Wrong Credentials");
       return false;
     }
 };
@@ -45,6 +43,9 @@ password: string;
 subscription: Subscription;
 
   ngOnInit() {
+    if(this.service.isLoggedIn()){
+      this.router.navigateByUrl("main-navigation")
+    }
   }
 
   ngOnDestroy() {

@@ -51,6 +51,7 @@ export class DataServiceService {
   private subjectData = new Subject<any>();
   private subjectRadar = new Subject<any>();
   private subjectCollections = new Subject<any>();
+  private loggedIn=false;
 
   
 
@@ -114,6 +115,10 @@ export class DataServiceService {
   login (lf: loginform): Observable<any> {
     var d = JSON.stringify(lf)
     this.http.post<any>(this.loginUrl, d,httpOptions).subscribe((r:String)=>{
+    console.log(r);
+    if(r=="Success"){
+      this.loggedIn=true;
+    }
     this.sendMessage(r);
     });
       return 
@@ -122,6 +127,11 @@ export class DataServiceService {
   getHistory(){
     var r=this.http.get<string>(this.historyUrl);
     return r;
+  }
+
+  isLoggedIn(){
+    console.log(this.loggedIn);
+    return this.loggedIn;
   }
 
   cereateMeasure(lf:createmeasure): Observable<any>{
