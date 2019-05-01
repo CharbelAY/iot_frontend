@@ -4,28 +4,46 @@
         The actual rendered columns are set as a property on the row definition" -->
 
   <!-- Position Column -->
-  <ng-container matColumnDef="position">
-    <th mat-header-cell *matHeaderCellDef> No. </th>
-    <td mat-cell *matCellDef="let element"> {{element.position}} </td>
+  <ng-container matColumnDef="fcnt">
+    <th mat-header-cell *matHeaderCellDef> fcnt</th>
+    <td mat-cell *matCellDef="let element"> {{element.fcnt}} </td>
   </ng-container>
 
   <!-- Name Column -->
-  <ng-container matColumnDef="name">
-    <th mat-header-cell *matHeaderCellDef> Name </th>
-    <td mat-cell *matCellDef="let element"> {{element.name}} </td>
+  <ng-container matColumnDef="frequency">
+    <th mat-header-cell *matHeaderCellDef> frequency </th>
+    <td mat-cell *matCellDef="let element"> {{element.frequency}} </td>
   </ng-container>
 
   <!-- Weight Column -->
-  <ng-container matColumnDef="weight">
-    <th mat-header-cell *matHeaderCellDef> Weight </th>
-    <td mat-cell *matCellDef="let element"> {{element.weight}} </td>
+  <ng-container matColumnDef="adr">
+    <th mat-header-cell *matHeaderCellDef> adr </th>
+    <td mat-cell *matCellDef="let element"> {{element.adr}} </td>
   </ng-container>
 
   <!-- Symbol Column -->
-  <ng-container matColumnDef="symbol">
-    <th mat-header-cell *matHeaderCellDef> Symbol </th>
-    <td mat-cell *matCellDef="let element"> {{element.symbol}} </td>
+  <ng-container matColumnDef="data">
+    <th mat-header-cell *matHeaderCellDef>  data  </th>
+    <td mat-cell *matCellDef="let element"> {{element.data}} </td>
   </ng-container>
+
+    
+    <ng-container matColumnDef="time">
+      <th mat-header-cell *matHeaderCellDef>  time  </th>
+      <td mat-cell *matCellDef="let element"> {{element.time}} </td>
+    </ng-container>
+
+      
+  <ng-container matColumnDef="devicename">
+    <th mat-header-cell *matHeaderCellDef> devicename </th>
+    <td mat-cell *matCellDef="let element"> {{element.devicename}} </td>
+  </ng-container>
+
+   
+    <ng-container matColumnDef="lorasnr">
+      <th mat-header-cell *matHeaderCellDef> lorasnr </th>
+      <td mat-cell *matCellDef="let element"> {{element.lorasnr}} </td>
+    </ng-container>
 
   <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
   <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>

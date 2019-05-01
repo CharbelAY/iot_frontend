@@ -1,24 +1,19 @@
 import { Component, OnInit } from '@angular/core';
+import { DataServiceService } from '../data-service.service';
 
-export interface PeriodicElement {
-  name: string;
-  position: number;
-  weight: number;
-  symbol: string;
+
+export interface DataTable{
+  fcnt: string;
+  frequency:number;
+  adr:string;
+  data:string;
+  time:string;
+  devicename:string;
+  lorasnr:string;
 }
 
-const ELEMENT_DATA: PeriodicElement[] = [
-  {position: 1, name: 'Hydrogen', weight: 1.0079, symbol: 'H'},
-  {position: 2, name: 'Helium', weight: 4.0026, symbol: 'He'},
-  {position: 3, name: 'Lithium', weight: 6.941, symbol: 'Li'},
-  {position: 4, name: 'Beryllium', weight: 9.0122, symbol: 'Be'},
-  {position: 5, name: 'Boron', weight: 10.811, symbol: 'B'},
-  {position: 6, name: 'Carbon', weight: 12.0107, symbol: 'C'},
-  {position: 7, name: 'Nitrogen', weight: 14.0067, symbol: 'N'},
-  {position: 8, name: 'Oxygen', weight: 15.9994, symbol: 'O'},
-  {position: 9, name: 'Fluorine', weight: 18.9984, symbol: 'F'},
-  {position: 10, name: 'Neon', weight: 20.1797, symbol: 'Ne'},
-];
+
+var ELEMENT_DATA: DataTable[] = [];
 
 @Component({
   selector: 'app-data-table-affichage',
@@ -27,14 +22,26 @@ const ELEMENT_DATA: PeriodicElement[] = [
 })
 export class DataTableAffichageComponent implements OnInit {
 
-  constructor() { }
+  displayedColumns: string[] = ['fcnt', 'frequency', 'adr', 'data','time','time','devicename','lorasnr'];
+  dataSource = ELEMENT_DATA;
+
+  constructor(private service:DataServiceService) { 
+    var dataContainer1 = service.getTableData("2");
+      for (let key in dataContainer1) {
+        ELEMENT_DATA.push({
+          fcnt: dataContainer1[key]['fCnt'],
+          frequency: dataContainer1[key]['txInfo']['frequency'], 
+          adr:  dataContainer1[key]['adr'],
+          data: dataContainer1[key]['data'],
+          time:dataContainer1[key]['rxInfo'][0]['time'],
+          devicename:dataContainer1[key]['deviceName'],
+          lorasnr:dataContainer1[key]['rxInfo'][0]['loRaSNR']
+        })
+  }
+  }
 
   ngOnInit() {
   }
 
 }
 
-export class TableBasicExample {
-  displayedColumns: string[] = ['position', 'name', 'weight', 'symbol'];
-  dataSource = ELEMENT_DATA;
-}

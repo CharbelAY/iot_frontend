@@ -219,6 +219,19 @@ populate(i){
   window.localStorage.setItem(i['Radar2']['saveName'], JSON.stringify(i['Radar2']));
 }
 
+getTableData(number){
+  if(number=="1"){
+    var data1:JSON = JSON.parse(window.localStorage.getItem("1Data"));
+    data1 = data1['data'];
+    return data1;
+  }
+  if(number=="2"){
+    var data2:JSON = JSON.parse(window.localStorage.getItem("2Data"));
+    data2=data2['data'];
+    return data2;
+  }
+}
+
 
   
 
