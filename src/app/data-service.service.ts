@@ -51,7 +51,7 @@ export class DataServiceService {
   private subjectData = new Subject<any>();
   private subjectRadar = new Subject<any>();
   private subjectCollections = new Subject<any>();
-  private loggedIn=false;
+  // private loggedIn=false;
 
   
 
@@ -117,7 +117,7 @@ export class DataServiceService {
     this.http.post<any>(this.loginUrl, d,httpOptions).subscribe((r:String)=>{
     console.log(r);
     if(r=="Success"){
-      this.loggedIn=true;
+      window.localStorage.setItem("LoggedIn",JSON.stringify(true));
     }
     this.sendMessage(r);
     });
@@ -130,8 +130,11 @@ export class DataServiceService {
   }
 
   isLoggedIn(){
-    console.log(this.loggedIn);
-    return this.loggedIn;
+    return JSON.parse(window.localStorage.getItem("LoggedIn"));
+  }
+
+  logout(){
+    window.localStorage.setItem("LoggedIn",JSON.stringify(false));
   }
 
   cereateMeasure(lf:createmeasure): Observable<any>{
