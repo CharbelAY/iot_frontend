@@ -3,7 +3,6 @@ import { map } from 'rxjs/operators';
 import { Breakpoints, BreakpointObserver } from '@angular/cdk/layout';
 import { DataServiceService } from '../data-service.service';
 import { Subscription } from 'rxjs';
-import { DataTableComponent } from '../data-table/data-table.component';
 
 @Component({
   selector: 'app-dashboard',

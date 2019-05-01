@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { DataTableComponent } from './data-table/data-table.component';
 import { BarchartComponent } from './barchart/barchart.component';
 import { FormsRequestDataComponent } from './forms-request-data/forms-request-data.component';
 import { TestDbdataComponent } from './test-dbdata/test-dbdata.component';
@@ -12,6 +11,7 @@ import { CreateMeasureComponent } from './create-measure/create-measure.componen
 import { LineChartComponent } from './line-chart/line-chart.component';
 import { PieChartComponent } from './pie-chart/pie-chart.component';
 import { HistoryCardsViewComponent } from './history-cards-view/history-cards-view.component';
+import {DataTableAffichageComponent} from './data-table-affichage/data-table-affichage.component';
 
 const routes: Routes = [
   {path: 'History', component:HistoryCardsViewComponent},
@@ -20,6 +20,7 @@ const routes: Routes = [
   {path:'linechart', component:LineChartComponent},
   {path:'piechart', component:PieChartComponent},
   {path:'test',component:TestDbdataComponent},
+  {path:'table',component:DataTableAffichageComponent},
   {path:'', component:LoginFormComponent}
 ];
 

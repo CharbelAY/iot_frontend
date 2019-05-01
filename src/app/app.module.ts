@@ -18,7 +18,6 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MainNavigationBarComponent } from './main-navigation-bar/main-navigation-bar.component';
 import { LayoutModule } from '@angular/cdk/layout';
 import { MatToolbarModule, MatButtonModule, MatSidenavModule, MatIconModule, MatListModule, MatTableModule, MatPaginatorModule, MatSortModule, MatGridListModule, MatCardModule, MatMenuModule } from '@angular/material';
-import { DataTableComponent } from './data-table/data-table.component';
 import { RadarChartComponent } from './radar-chart/radar-chart.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import {BarchartComponent} from './barchart/barchart.component';
@@ -31,6 +30,7 @@ import { LineChartComponent } from './line-chart/line-chart.component';
 import { PieChartComponent } from './pie-chart/pie-chart.component';
 import {MatSelectModule} from '@angular/material/select';
 import { HistoryCardsViewComponent } from './history-cards-view/history-cards-view.component';
+import { DataTableAffichageComponent } from './data-table-affichage/data-table-affichage.component';
 
 
 
@@ -39,7 +39,6 @@ import { HistoryCardsViewComponent } from './history-cards-view/history-cards-vi
   declarations: [
     AppComponent,
     MainNavigationBarComponent,
-    DataTableComponent,
     DashboardComponent,
     BarchartComponent,
     FormsRequestDataComponent,
@@ -49,7 +48,8 @@ import { HistoryCardsViewComponent } from './history-cards-view/history-cards-vi
     CreateMeasureComponent,
     LineChartComponent,
     PieChartComponent,
-    HistoryCardsViewComponent
+    HistoryCardsViewComponent,
+    DataTableAffichageComponent
   ],
   imports: [
     MatSelectModule,
