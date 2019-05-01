@@ -2,25 +2,25 @@
   <mat-sidenav #drawer class="sidenav" fixedInViewport="true"
       [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
       [mode]="(isHandset$ | async) ? 'over' : 'side'"
-      [opened]="!(isHandset$ | async)" style="  background-image: linear-gradient(90deg, #536976, #292E49);
+      [opened]="!(isHandset$ | async)" style="   background-color:rgb(64, 61, 235);
       ">
-    <mat-toolbar >Menu</mat-toolbar>
+    <mat-toolbar  >Menu</mat-toolbar>
     <mat-nav-list>
       <a mat-list-item (click)="create=true; dash=false; table=false; history=false; " >
         <i class="material-icons">create</i>
-        <h4>Create Test</h4>
+        <h4 >Create Test</h4>
       </a>
       <a mat-list-item (click)="create=false; dash=true; table=false; history=false; ">
         <i class="material-icons">assessment</i>
-        <h4>Analyse Data</h4>
+        <h4 >Analyse Data</h4>
       </a>
       <a mat-list-item (click)="create=false; dash=false; table=true;  history=false;" >
         <i class="material-icons">assignment</i>
-        <h4>Visualise Raw Data</h4>
+        <h4 >Visualise Raw Data</h4>
       </a>
       <a mat-list-item (click)="create=false; dash=false; table=false;  history=true;">
           <i class="material-icons">history</i>
-          <h4>Measures History</h4>
+          <h4 >Measures History</h4>
     </a>
     </mat-nav-list>
   </mat-sidenav>

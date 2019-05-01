@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { map } from 'rxjs/operators';
 import { Breakpoints, BreakpointObserver } from '@angular/cdk/layout';
+import { DataServiceService } from '../data-service.service';
+import { Subscription } from 'rxjs';
 import { DataTableComponent } from '../data-table/data-table.component';
 
 @Component({
@@ -9,6 +11,12 @@ import { DataTableComponent } from '../data-table/data-table.component';
   styleUrls: ['./dashboard.component.css']
 })
 export class DashboardComponent {
+
+  subscription: Subscription;
+
+  Collection:Object;
+
+  collectionsAffichage: number[] = [];
   /** Based on the screen size, switch from standard to one column per row */
   cards = this.breakpointObserver.observe(Breakpoints.Handset).pipe(
     map(({ matches }) => {
@@ -31,5 +39,20 @@ export class DashboardComponent {
     })
   );
 
-  constructor(private breakpointObserver: BreakpointObserver) {}
+
+  constructor(private breakpointObserver: BreakpointObserver,private service:DataServiceService) {
+    this.subscription = this.service.getHistory().subscribe(message => { 
+      this.Collection=message; 
+      console.log(this.Collection);  
+      for(let key in this.Collection){
+        this.collectionsAffichage.push(this.Collection[key]);
+      }   
+     });
+
+     this.service.getCollections();
+   }
+
+  save(){
+    this.service.saveMeasure();
+  }
 }
