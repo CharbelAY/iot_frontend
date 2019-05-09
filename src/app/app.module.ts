@@ -31,6 +31,9 @@ import { PieChartComponent } from './pie-chart/pie-chart.component';
 import {MatSelectModule} from '@angular/material/select';
 import { HistoryCardsViewComponent } from './history-cards-view/history-cards-view.component';
 import { DataTableAffichageComponent } from './data-table-affichage/data-table-affichage.component';
+import { CandleChartComponent } from './candle-chart/candle-chart.component';
+import { NumberOfPacketsComponent } from './number-of-packets/number-of-packets.component';
+import { CreateMainMeasureComponent } from './create-main-measure/create-main-measure.component';
 
 
 
@@ -49,7 +52,10 @@ import { DataTableAffichageComponent } from './data-table-affichage/data-table-a
     LineChartComponent,
     PieChartComponent,
     HistoryCardsViewComponent,
-    DataTableAffichageComponent
+    DataTableAffichageComponent,
+    CandleChartComponent,
+    NumberOfPacketsComponent,
+    CreateMainMeasureComponent
   ],
   imports: [
     MatSelectModule,

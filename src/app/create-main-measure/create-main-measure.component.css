@@ -1,0 +1,26 @@
+.example-container {
+    display: flex;
+    flex-direction: row;
+  }
+  
+  .example-container > * {
+    width: 50%;
+    padding: 50px;
+  }
+
+.submitbutton{
+  position: absolute;
+  padding: 10px;
+}
+
+.example-container-card {
+  display: grid;
+  grid-template-columns: auto auto;
+  padding: 5%;
+  grid-gap: 5px;
+}
+
+.centerbutton{
+  position: absolute;
+  right: 45%;
+}

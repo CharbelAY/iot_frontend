@@ -42,6 +42,7 @@ export class DataServiceService {
   requestUrl = 'http://127.0.0.1:5000/receive'
   loginUrl = 'http://127.0.0.1:5000/login'
   createMeasureUrl='http://127.0.0.1:5000/createMeasure'
+  createMainMeasureUrl='http://127.0.0.1:5000/createMainMeasure'
   CollectionsUrl='http://127.0.0.1:5000/collectionsUrl'
   saveUrl='http://127.0.0.1:5000/save'
   historyUrl='http://127.0.0.1:5000/history'
@@ -150,6 +151,16 @@ export class DataServiceService {
       window.localStorage.setItem(obj.packetloss.saveName, JSON.stringify(this.PacketLoss));
   });
   return
+}
+
+cereateMainMeasure(lf:mainmeasure): Observable<any>{
+  var d = JSON.stringify(lf)
+  this.http.post<any>(this.createMainMeasureUrl, d,httpOptions).subscribe((r:string)=>{
+    let obj = JSON.parse(r);
+    console.log(obj);
+    //hone bado yredele jaweb list taba3 kel l stats
+});
+return
 }
 
 PacketLoss:Object;

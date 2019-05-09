@@ -1,0 +1,142 @@
+
+<h1 class="submitbutton">Create Measurement</h1>
+<br>
+
+<section class="example-section">
+  <mat-progress-bar
+      class="example-margin"
+      [color]="color"
+      [mode]="mode"
+      [value]="value"
+      [bufferValue]="bufferValue">
+  </mat-progress-bar>
+</section>
+
+<br><br><br>
+
+<div class="example-container">
+
+  <h3>No Acknowledge :</h3>
+
+    <mat-form-field>
+        <input matInput type="string" [(ngModel)]="startDate_NoAck" placeholder="Start Date ex:2019-04-18T10:57">
+      </mat-form-field>
+
+    <mat-form-field>
+      <input matInput type="string" [(ngModel)]="endDate_NoAck" placeholder="End Date ex:2019-04-18T10:59:00" >
+    </mat-form-field>
+  
+  
+  </div>
+  
+
+  <div class="example-container">
+
+      <h3>Acknowledge :</h3>
+    
+        <mat-form-field>
+            <input matInput type="string" [(ngModel)]="startDate_Ack" placeholder="Start Date ex:2019-04-18T10:57">
+          </mat-form-field>
+    
+        <mat-form-field>
+          <input matInput type="string" [(ngModel)]="endDate_Ack" placeholder="End Date ex:2019-04-18T10:59:00" >
+        </mat-form-field>
+      
+      
+      </div>
+
+      <div class="example-container">
+
+          <h3>Redundancy :</h3>
+        
+            <mat-form-field>
+                <input matInput type="string" [(ngModel)]="startDate_Red" placeholder="Start Date ex:2019-04-18T10:57">
+              </mat-form-field>
+        
+            <mat-form-field>
+              <input matInput type="string" [(ngModel)]="endDate_Red" placeholder="End Date ex:2019-04-18T10:59:00" >
+            </mat-form-field>
+          
+          
+          </div>
+
+    <br>
+
+    <button class="centerbutton" mat-raised-button (click)="cereateMeasure()">Send</button>
+    <br><br><br>
+    <div class ="example-container-card">
+        <mat-card class="example-card">
+            <mat-card-header>
+              <mat-card-title>Shiba Inu</mat-card-title>
+              <mat-card-subtitle>Dog Breed</mat-card-subtitle>
+            </mat-card-header>
+            <mat-card-content>
+              <p>
+                The Shiba Inu is the smallest of the six original and distinct spitz breeds of dog from Japan.
+                A small, agile dog that copes very well with mountainous terrain, the Shiba Inu was originally
+                bred for hunting.
+              </p>
+            </mat-card-content>
+            <mat-card-actions>
+              <button mat-button>LIKE</button>
+              <button mat-button>SHARE</button>
+            </mat-card-actions>
+          </mat-card>
+
+          <mat-card class="example-card">
+              <mat-card-header>
+                <mat-card-title>Shiba Inu</mat-card-title>
+                <mat-card-subtitle>Dog Breed</mat-card-subtitle>
+              </mat-card-header>
+              <mat-card-content>
+                <p>
+                  The Shiba Inu is the smallest of the six original and distinct spitz breeds of dog from Japan.
+                  A small, agile dog that copes very well with mountainous terrain, the Shiba Inu was originally
+                  bred for hunting.
+                </p>
+              </mat-card-content>
+              <mat-card-actions>
+                <button mat-button>LIKE</button>
+                <button mat-button>SHARE</button>
+              </mat-card-actions>
+            </mat-card>
+
+
+            <mat-card class="example-card">
+                <mat-card-header>
+                  <mat-card-title>Shiba Inu</mat-card-title>
+                  <mat-card-subtitle>Dog Breed</mat-card-subtitle>
+                </mat-card-header>
+                <mat-card-content>
+                  <p>
+                    The Shiba Inu is the smallest of the six original and distinct spitz breeds of dog from Japan.
+                    A small, agile dog that copes very well with mountainous terrain, the Shiba Inu was originally
+                    bred for hunting.
+                  </p>
+                </mat-card-content>
+                <mat-card-actions>
+                  <button mat-button>LIKE</button>
+                  <button mat-button>SHARE</button>
+                </mat-card-actions>
+              </mat-card>
+
+
+              <mat-card class="example-card">
+                  <mat-card-header>
+                    <mat-card-title>Shiba Inu</mat-card-title>
+                    <mat-card-subtitle>Dog Breed</mat-card-subtitle>
+                  </mat-card-header>
+                  <mat-card-content>
+                    <div>
+                      <ul>
+                        <li>a</li>
+                        <li>b</li>
+                      </ul>
+                    </div>
+                  </mat-card-content>
+                  <mat-card-actions>
+                    <button mat-button>LIKE</button>
+                    <button mat-button>SHARE</button>
+                  </mat-card-actions>
+                </mat-card>
+    </div>

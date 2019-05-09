@@ -12,6 +12,9 @@ import { LineChartComponent } from './line-chart/line-chart.component';
 import { PieChartComponent } from './pie-chart/pie-chart.component';
 import { HistoryCardsViewComponent } from './history-cards-view/history-cards-view.component';
 import {DataTableAffichageComponent} from './data-table-affichage/data-table-affichage.component';
+import { CandleChartComponent } from './candle-chart/candle-chart.component';
+import { NumberOfPacketsComponent } from './number-of-packets/number-of-packets.component';
+import { CreateMainMeasureComponent } from './create-main-measure/create-main-measure.component';
 
 const routes: Routes = [
   {path: 'History', component:HistoryCardsViewComponent},
@@ -21,6 +24,9 @@ const routes: Routes = [
   {path:'piechart', component:PieChartComponent},
   {path:'test',component:TestDbdataComponent},
   {path:'table',component:DataTableAffichageComponent},
+  {path:'candleChart',component:CandleChartComponent},
+  {path:'numberofpackets',component:NumberOfPacketsComponent},
+  {path:'create-main-measure',component:CreateMainMeasureComponent},
   {path:'', component:LoginFormComponent}
 ];
 
