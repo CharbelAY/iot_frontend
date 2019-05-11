@@ -53,7 +53,7 @@ export class CreateMainMeasureComponent implements OnInit {
       startDate_NoAck: this.startDate_NoAck,
       endDate_NoAck: this.endDate_NoAck,
       startDate_Red: this.startDate_Red,
-      endDate_Red: this.startDate_Red,
+      endDate_Red: this.endDate_Red,
     }
 
     this.turnProgressOn();

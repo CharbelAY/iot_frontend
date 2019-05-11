@@ -155,9 +155,10 @@ export class DataServiceService {
 
 cereateMainMeasure(lf:mainmeasure): Observable<any>{
   var d = JSON.stringify(lf)
-  this.http.post<any>(this.createMainMeasureUrl, d,httpOptions).subscribe((r:string)=>{
-    let obj = JSON.parse(r);
-    console.log(obj);
+  this.http.post<any>(this.createMainMeasureUrl, d,httpOptions).subscribe((r)=>{
+    console.log(r)
+    // let obj = JSON.parse(r);
+    // console.log(obj);
     //hone bado yredele jaweb list taba3 kel l stats
 });
 return
