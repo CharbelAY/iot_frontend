@@ -22,6 +22,7 @@ export class BarchartComponent implements OnInit {
 
   constructor(private service:DataServiceService) { 
     this.stats=service.mainMeasureData();
+    console.log(this.stats);
   }
 
   public barChartOptions = {
@@ -46,7 +47,7 @@ export class BarchartComponent implements OnInit {
     this.barChartData.push({data: this.Min, label: 'Min'})
     this.barChartData.push({data: this.PSdev, label: 'Population Standard Deviation'})
     this.barChartData.push({data: this.Mean, label: 'Mean'})
-    this.barChartData.push({data: this.Mean, label: 'Mediane'})
+    this.barChartData.push({data: this.Median, label: 'Mediane'})
     }
 
     if(this.numberMeasure=="1"){
