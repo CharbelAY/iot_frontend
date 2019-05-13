@@ -19,8 +19,7 @@
 
 .topnav{
   position: sticky;
-  background-color:rgb(64, 61, 235);
-}
+  background-image: linear-gradient(90deg, #536976, #292E49);}
 
 .white{
   color: white;

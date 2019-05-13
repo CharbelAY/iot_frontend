@@ -157,9 +157,7 @@ cereateMainMeasure(lf:mainmeasure): Observable<any>{
   var d = JSON.stringify(lf)
   this.http.post<any>(this.createMainMeasureUrl, d,httpOptions).subscribe((r)=>{
     console.log(r)
-    // let obj = JSON.parse(r);
-    // console.log(obj);
-    //hone bado yredele jaweb list taba3 kel l stats
+    window.localStorage.setItem("main-measure", JSON.stringify(r));
 });
 return
 }
@@ -242,6 +240,11 @@ getTableData(number){
     data2=data2['data'];
     return data2;
   }
+}
+
+mainMeasureData(){
+  var res:JSON=JSON.parse(window.localStorage.getItem("main-measure"));
+  return res;
 }
 
 

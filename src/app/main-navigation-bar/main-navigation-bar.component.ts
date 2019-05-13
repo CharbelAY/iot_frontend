@@ -25,6 +25,7 @@ export class MainNavigationBarComponent {
   tabe:boolean=false;
   history:boolean=false;
   mainmeasure:boolean=false;
+  comparemeasures:boolean=false;
 
 
   logout(){

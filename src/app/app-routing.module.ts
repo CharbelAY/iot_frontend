@@ -15,6 +15,7 @@ import {DataTableAffichageComponent} from './data-table-affichage/data-table-aff
 import { CandleChartComponent } from './candle-chart/candle-chart.component';
 import { NumberOfPacketsComponent } from './number-of-packets/number-of-packets.component';
 import { CreateMainMeasureComponent } from './create-main-measure/create-main-measure.component';
+import { MainMeasureDashboardComponent } from './main-measure-dashboard/main-measure-dashboard.component';
 
 const routes: Routes = [
   {path: 'History', component:HistoryCardsViewComponent},
@@ -27,6 +28,7 @@ const routes: Routes = [
   {path:'candleChart',component:CandleChartComponent},
   {path:'numberofpackets',component:NumberOfPacketsComponent},
   {path:'create-main-measure',component:CreateMainMeasureComponent},
+  {path:'main-measure-dashboard',component:MainMeasureDashboardComponent},
   {path:'', component:LoginFormComponent}
 ];
 

@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit,Input } from '@angular/core';
+import { DataServiceService } from '../data-service.service';
+
 
 @Component({
   selector: 'app-barchart',
@@ -7,21 +9,69 @@ import { Component, OnInit } from '@angular/core';
 })
 export class BarchartComponent implements OnInit {
 
-  constructor() { }
+  @Input() numberMeasure
+  stats:JSON;
+  Min = [];
+  Max = [];
+  PSdev = [];
+  Mean = [];
+  Median = [];
+  count = [];
+  repetition = [];
+
+
+  constructor(private service:DataServiceService) { 
+    this.stats=service.mainMeasureData();
+  }
 
   public barChartOptions = {
     scaleShowVerticalLines: false,
     responsive: true
   };
-  public barChartLabels = ['2006', '2007', '2008', '2009', '2010', '2011', '2012'];
+  public barChartLabels = ['NoAckL', 'NoAckM', 'NoAckH', 'AckL', 'AckM', 'AckH', 'RedL','RedM','RedH'];
   public barChartType = 'bar';
   public barChartLegend = true;
-  public barChartData = [
-    {data: [65, 59, 80, 81, 56, 55, 40], label: 'Series A'},
-    {data: [28, 48, 40, 19, 86, 27, 90], label: 'Series B'}
-  ];
+  public barChartData = [];
 
   ngOnInit() {
+    if(this.numberMeasure=="2"){
+    for(let data in this.stats['stats']){
+      this.Max.push(this.stats['stats'][data]["max"]);
+      this.Min.push(this.stats['stats'][data]["min"]);
+      this.PSdev.push(this.stats['stats'][data]["pstdev"]);
+      this.Mean.push(this.stats['stats'][data]["mean"]);
+      this.Median.push(this.stats['stats'][data]["median"]);
+    }
+    this.barChartData.push({data: this.Max, label: 'Max'})
+    this.barChartData.push({data: this.Min, label: 'Min'})
+    this.barChartData.push({data: this.PSdev, label: 'Population Standard Deviation'})
+    this.barChartData.push({data: this.Mean, label: 'Mean'})
+    this.barChartData.push({data: this.Mean, label: 'Mediane'})
+    }
+
+    if(this.numberMeasure=="1"){
+      for(let data in this.stats['count']){
+        this.count.push(this.stats['count'][data]['totalReceived'])
+      }
+      for(let data in this.stats['repetition']){
+        if(this.stats['repetition'][data]!=0){
+        this.repetition.push(this.stats['repetition'][data])
+        }else{
+          this.repetition.push(900);
+        }
+      }
+      this.repetition[6]=2700;
+      this.repetition[7]=2700;
+      this.repetition[8]=2700;
+
+
+
+      this.barChartData.push({data: this.count, label: 'Number of packets received'})
+      this.barChartData.push({data: this.repetition, label: 'Number of packets sent'})
+
+
+
+    }
   }
 
 }

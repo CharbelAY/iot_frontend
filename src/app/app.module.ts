@@ -34,6 +34,7 @@ import { DataTableAffichageComponent } from './data-table-affichage/data-table-a
 import { CandleChartComponent } from './candle-chart/candle-chart.component';
 import { NumberOfPacketsComponent } from './number-of-packets/number-of-packets.component';
 import { CreateMainMeasureComponent } from './create-main-measure/create-main-measure.component';
+import { MainMeasureDashboardComponent } from './main-measure-dashboard/main-measure-dashboard.component';
 
 
 
@@ -55,7 +56,8 @@ import { CreateMainMeasureComponent } from './create-main-measure/create-main-me
     DataTableAffichageComponent,
     CandleChartComponent,
     NumberOfPacketsComponent,
-    CreateMainMeasureComponent
+    CreateMainMeasureComponent,
+    MainMeasureDashboardComponent
   ],
   imports: [
     MatSelectModule,
