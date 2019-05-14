@@ -26,6 +26,13 @@ export class BarchartComponent implements OnInit {
   }
 
   public barChartOptions = {
+    scales : {
+      yAxes: [{
+         ticks: {
+            beginAtZero: true,
+          }
+      }]
+    },
     scaleShowVerticalLines: false,
     responsive: true
   };

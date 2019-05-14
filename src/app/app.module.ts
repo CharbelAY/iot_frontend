@@ -35,6 +35,7 @@ import { CandleChartComponent } from './candle-chart/candle-chart.component';
 import { NumberOfPacketsComponent } from './number-of-packets/number-of-packets.component';
 import { CreateMainMeasureComponent } from './create-main-measure/create-main-measure.component';
 import { MainMeasureDashboardComponent } from './main-measure-dashboard/main-measure-dashboard.component';
+import { LoadingScreenComponent } from './loading-screen/loading-screen.component';
 
 
 
@@ -57,7 +58,8 @@ import { MainMeasureDashboardComponent } from './main-measure-dashboard/main-mea
     CandleChartComponent,
     NumberOfPacketsComponent,
     CreateMainMeasureComponent,
-    MainMeasureDashboardComponent
+    MainMeasureDashboardComponent,
+    LoadingScreenComponent
   ],
   imports: [
     MatSelectModule,
